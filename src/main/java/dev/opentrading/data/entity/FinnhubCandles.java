@@ -6,19 +6,22 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Data;
+
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FinnhubCandles {
 	@JsonProperty("o")
-	List<BigDecimal> open;
+	List<Float> open;
 	
 	@JsonProperty("c")
-	List<BigDecimal> close;
+	List<Float> close;
 	
 	@JsonProperty("h")
-	List<BigDecimal> high;
+	List<Float> high;
 	
 	@JsonProperty("l")
-	List<BigDecimal> low;
+	List<Float> low;
 	
 	@JsonProperty("v")
 	List<Integer> volume;
