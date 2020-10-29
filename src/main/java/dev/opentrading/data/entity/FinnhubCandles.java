@@ -1,6 +1,6 @@
 package dev.opentrading.data.entity;
 
-import java.math.BigDecimal;
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -10,25 +10,25 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FinnhubCandles {
+public class FinnhubCandles implements Serializable {
 	@JsonProperty("o")
-	List<Float> open;
+	private List<Float> open;
 	
 	@JsonProperty("c")
-	List<Float> close;
+	private List<Float> close;
 	
 	@JsonProperty("h")
-	List<Float> high;
+	private List<Float> high;
 	
 	@JsonProperty("l")
-	List<Float> low;
+	private List<Float> low;
 	
 	@JsonProperty("v")
-	List<Integer> volume;
+	private List<Integer> volume;
 	
 	@JsonProperty("t")
-	List<Long> timestamp;
+	private List<Long> timestamp;
 	
 	@JsonProperty("s")
-	String status;
+	private String status;
 }

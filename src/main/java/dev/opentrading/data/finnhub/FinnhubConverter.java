@@ -15,6 +15,10 @@ public class FinnhubConverter {
 	public BarSeries convertCandlesToBarSeries(FinnhubCandles candles) {
 		BarSeries series = new BaseBarSeriesBuilder().build();
 		
+		if (!candles.getStatus().equals("ok")) {
+			return series;
+		}
+		
 		int numCandles = candles.getTimestamp().size();
 		
 		for (int i = 0; i < numCandles; i++) {
